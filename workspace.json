@@ -17,7 +17,12 @@
             "tsConfig": "apps/payment/tsconfig.app.json",
             "assets": [
               "apps/payment/src/favicon.ico",
-              "apps/payment/src/assets"
+              "apps/payment/src/assets",
+              {
+                "input": "libs/shared/assets/src/lib",
+                "glob": "*.jpg",
+                "output": "assets"
+              }
             ],
             "styles": ["apps/payment/src/styles.scss"],
             "scripts": [],
@@ -104,6 +109,87 @@
             "linter": "eslint",
             "tsConfig": ["apps/payment-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/payment-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "shared-assets": {
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/shared/assets/tsconfig.lib.json",
+              "libs/shared/assets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/assets/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/assets/jest.config.js",
+            "tsConfig": "libs/shared/assets/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-components": {
+      "root": "libs/ui-components",
+      "sourceRoot": "libs/ui-components/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/ui-components/tsconfig.lib.json",
+              "libs/ui-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-components/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-components/jest.config.js",
+            "tsConfig": "libs/ui-components/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "payment-utils": {
+      "root": "libs/payment-utils",
+      "sourceRoot": "libs/payment-utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/payment-utils/tsconfig.lib.json",
+              "libs/payment-utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/payment-utils/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/payment-utils/jest.config.js",
+            "tsConfig": "libs/payment-utils/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }

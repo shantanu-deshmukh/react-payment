@@ -28,6 +28,15 @@
     "payment-e2e": {
       "tags": [],
       "implicitDependencies": ["payment"]
+    },
+    "shared-assets": {
+      "tags": []
+    },
+    "ui-components": {
+      "tags": []
+    },
+    "payment-utils": {
+      "tags": []
     }
   }
 }
