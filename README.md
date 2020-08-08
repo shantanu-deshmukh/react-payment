@@ -14,6 +14,10 @@
 
 This repository features a react library containing re-usable component for CreditCard & PaymentForm. It also contains a demo application showing the usage of these components.
 
+[Live Demo](https://fir-813ab.web.app)
+
+![Demo React Credit Card](demo.gif)
+
 ## Project Structure
 
 - `ui-components` : Library exporting the CreditCard and Payment Form components 
