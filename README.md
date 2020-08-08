@@ -1,90 +1,87 @@
-# Shantanu
+# Payment Demo
 
-This project was generated using [Nx](https://nx.dev).
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Installing Dependencies](#installing-dependencies)
+  - [Running the Project](#running-the-project)
+- [Dependencies](#dependencies)
+- [Open Issues](#open-issues)
+- [Attribution](#attribution)
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+## Overview
 
-## Adding capabilities to your workspace
+This repository features a react library containing re-usable component for CreditCard & PaymentForm. It also contains a demo application showing the usage of these components.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+## Project Structure
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+- `ui-components` : Library exporting the CreditCard and Payment Form components 
+  - Path: `libs/ui-components`
+  - Example Usage: 
+  
+    ```typescript
+    //import lib in any project within the workspace
+    import { PayForm, CreditCard } from '@shantanu/ui-components';
 
-Below are our core plugins:
+    //use like a regular react component/html tag
+    <CreditCard/>
+    ```
+- `payment-utils` : Library exporting commonly used functions
+  - Path: `libs/payment-utils`
+  - Example Usage: 
+  ``` typescript
+  //import lib in any project within the workspace
+  import { maskAllCharacters, maskCreditCard } from '@shantanu/payment-utils';
+  //then use like any regular javascript function
+  ```
+- Payment Demo: Demo react project showing usage of the above libraries
+   - Path: `apps/payments`
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
+## Getting Started
 
-## Generate an application
+### Installing Dependencies
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Clone the repo & cd into the project directory to install dependencies.
 
-> You can use any of the plugins above to generate applications as well.
+```cmd
+> yarn install
+   
+//or
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+> npm install
+```
 
-## Generate a library
+### Running the Project
+- Start the project in development mode
+  ```cmd
+  > yarn run start   
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+  //or
 
-> You can also use any of the plugins above to generate libraries as well.
+  > npm run start
+  ```
+- Build the Project
+  ```cmd
+    > yarn run build
 
-Libraries are sharable across libraries and applications. They can be imported from `@shantanu/mylib`.
+    //or
 
-## Development server
+    > npm run build
+  ```
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+## Dependencies
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+- [nx.dev](https://nx.dev/react) (Optional): For managing the workspace
 
-## Code scaffolding
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+## Open Issues
+- Detect & display logo of Credit Card Network based card number (e.g. Visa, MasterCard, etc.)
+- Animations: Need to add animations for a smoother experience
 
-## Build
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+## Attribution
+- Credit card background image taken from [Freepik](https://www.freepik.com/free-photo/3d-render-communications-background-with-low-poly-plexus-design_9378272.htm)
+- Hologram image from [pngkey](https://www.pngkey.com/detail/u2w7e6e6t4y3t4i1_holographic-sticker-png-hologram-sticker-png/)
+- Visa logo from [flaticon](https://www.flaticon.com/free-icon/symbols_39134?term=visa&page=1&position=24)

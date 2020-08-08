@@ -55,9 +55,6 @@ export class PayForm extends Component<PayFormProps, PayFormState> {
     this.setState(newState);
   };
 
-  //TODO: move to util
-
-
   handleSubmit = (event) => {
     event.preventDefault();
     this.validateAll();
