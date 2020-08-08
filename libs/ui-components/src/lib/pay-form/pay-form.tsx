@@ -64,7 +64,7 @@ export class PayForm extends Component<PayFormProps, PayFormState> {
     let isValid = true;
     const newState = { ...this.state } as any;
     if (this.props.cardName === '') {
-      newState.cardNameError = 'Please enter a valid card name';
+      newState.cardNameError = 'Please enter valid card name';
       isValid = false;
     }
 
@@ -73,7 +73,7 @@ export class PayForm extends Component<PayFormProps, PayFormState> {
       this.props.cardNumber === '' ||
       this.props.cardNumber < 1000000000000000
     ) {
-      newState.cardNumberError = 'Please enter credit card number';
+      newState.cardNumberError = 'Please enter a valid credit card number';
       isValid = false;
     }
 
